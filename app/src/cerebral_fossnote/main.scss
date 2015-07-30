@@ -1,0 +1,26 @@
+@import url('http://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css');
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+}
+
+body {
+  font: 12px/1 'Montserrat', sans-serif;
+  color: #333;
+  background: #333;
+}
+
+.app {
+  height: 100%;
+}

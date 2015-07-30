@@ -1,0 +1,41 @@
+
+.content {
+  display: flex;
+  flex-flow: row;
+  height: 100%;
+  max-width:100%;
+  background: #eee;
+  box-shadow: 0 0 5px rgba(0,0,0,1);
+  transform: translate3d(0,0,0);
+  transition: transform .2s, max-width .2s;
+
+
+}
+.content.isOpen {
+  transform: translate3d(220px,0,0);
+  max-width: calc(100% - 220px);
+  width: 100%;
+}
+
+
+
+.rightContent {
+  background-color: #999999;
+  flex-basis: 100%;
+  overflow: auto;
+}
+
+.topMenu {
+  height: 40px;
+  padding: 10px;
+  //  position: fixed;
+  .button {
+    cursor: pointer;
+  }
+
+  .button:before {
+    content: '\f0c9';
+    font: 20px fontawesome;
+  }
+
+}
