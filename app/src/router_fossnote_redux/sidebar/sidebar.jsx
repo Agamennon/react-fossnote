@@ -3,19 +3,19 @@ import { Link } from 'react-router';
 import './sidebar.scss';
 
 export default class Sidebar extends React.Component {
-    static contextTypes = {
+ /*   static contextTypes = {
         router: React.PropTypes.object.isRequired
-    };
+    };*/
     constructor(props) {
         super(props);
     }
 
     render () {
         //console.log(this.props.leftContent.colapse);
-        var location = this.context.router.state.location;
-        var isActive = this.context.router.isActive(location.pathname,location.query);
-        console.log(location);
-        console.log(isActive);
+    //    var location = this.context.router.state.location;
+    //    var isActive = this.context.router.isActive(location.pathname,location.query);
+    //    console.log(location);
+    //    console.log(isActive);
         return (
             <div className='sidebar'>
                 <div className='title'>

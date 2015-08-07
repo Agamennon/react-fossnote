@@ -1,6 +1,10 @@
-import './../node_modules/todomvc-common/base.css';
-import './../node_modules/todomvc-app-css/index.css';
+
+
+
 import './styles.css';
+import './base.css';
+import './index.css';
+
 
 import React from 'react';
 import App from './App.js';

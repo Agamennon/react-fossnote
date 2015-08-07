@@ -1,7 +1,12 @@
 
 import './sidebar.scss';
+import {Decorator as Cerebral} from 'cerebral-react-immutable-store';
 
-export default class Sidebar extends React.Component {
+@Cerebral({
+    test:['test'],
+    router:['router']
+})
+class Sidebar extends React.Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
@@ -21,6 +26,8 @@ export default class Sidebar extends React.Component {
             collapse:this.state.collapse
         });
 
+     //   const allClass = classnames({'active': (this.props.router.path === '/all')});
+
         return (
             <div className='sidebar'>
                 <div className='title'>
@@ -28,16 +35,16 @@ export default class Sidebar extends React.Component {
                 </div>
                 <ul className='nav'>
                     <li>
-                        <a onClick={this.handleClick} className='active'>All Notes</a>
+                        <a  className={classnames({'active': (this.props.router.path === '/all')})} href="#/all">All notes</a>
                     </li>
                     <li>
-                        <a>Notebooks</a>
+                        <a className={classnames({'active': (this.props.router.path === '/notebooks')})} href="#/notebooks">Notebooks</a>
                     </li>
                     <li>
-                        <a>Tags</a>
+                        <a className={classnames({'active': (this.props.router.path === '/tags')})} href="#/tags">Tags</a>
                     </li>
                     <li>
-                        <a>Settings</a>
+                        <a className={classnames({'active': (this.props.router.path === '/settings')})} href="#/settings">Settings</a>
                     </li>
                 </ul>
             </div>
@@ -46,3 +53,7 @@ export default class Sidebar extends React.Component {
 
 }
 
+export default Sidebar;
+
+/*
+<a onClick={this.handleClick} className='active'>All Notes</a>*/

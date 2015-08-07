@@ -1,16 +1,28 @@
 
+require('./header.scss');
 import {HeaderItem} from './header-item.jsx'
 
-//@Radium
+
 export class Header extends React.Component {
 
     constructor(props) {
         super(props);
 
     }
+
+    click(){
+        console.log('1');
+        console.log('2');
+        console.log('3');
+        console.log('4');
+
+    }
+
+
+
     render () {
         return (
-            <header  style={[this.props.styles]}>
+            <header onClick={this.click}>
                   <HeaderItem/>
                   <HeaderItem/>
                   <HeaderItem/>

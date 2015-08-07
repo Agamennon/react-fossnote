@@ -21,7 +21,7 @@ export default class FossNote extends React.Component {
         return (
             <div className='app'>
                 <Sidebar {...this.props} />
-                <Content {...this.props} />
+                <Content {...this.props}>  {this.props.children} </Content>
             </div>
         );
     }

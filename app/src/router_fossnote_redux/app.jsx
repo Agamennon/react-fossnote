@@ -14,7 +14,8 @@ export default class App extends React.Component {
         const { sidePanelPosition,leftContent, dispatch } = this.props;
         return (
             <FossNote sidePanelPosition={sidePanelPosition} leftContent={leftContent}
-                {...bindActionCreators(FossnoteActions, dispatch)} />
+                {...bindActionCreators(FossnoteActions, dispatch)} >
+            </FossNote>
         );
     }
 }

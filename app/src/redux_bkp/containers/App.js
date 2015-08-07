@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import CounterApp from './CounterApp';
 import { createRedux } from 'redux';
 import { Provider } from 'redux/react';
-import * as stores from '../stores';
+//import * as stores from '../stores';
+import * as stores from '../stores/mysotres';
 
+console.log(stores);
 const redux = createRedux(stores);
 
 export default class App extends Component {

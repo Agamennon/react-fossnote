@@ -1,26 +1,21 @@
 
+import { Link } from 'react-router';
 import './sidebar.scss';
 
 export default class Sidebar extends React.Component {
+    static contextTypes = {
+        router: React.PropTypes.object.isRequired
+    };
     constructor(props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this);
-        this.state  = {collapse:false};
-    }
-
-
-    handleClick (){
-        var collapse = !this.state.collapse;
-        this.setState({collapse:collapse});
     }
 
     render () {
-
-        var left = classnames({
-            leftContent:true,
-            collapse:this.state.collapse
-        });
-
+        //console.log(this.props.leftContent.colapse);
+        var location = this.context.router.state.location;
+        var isActive = this.context.router.isActive(location.pathname,location.query);
+        console.log(location);
+        console.log(isActive);
         return (
             <div className='sidebar'>
                 <div className='title'>
@@ -28,16 +23,18 @@ export default class Sidebar extends React.Component {
                 </div>
                 <ul className='nav'>
                     <li>
-                        <a onClick={this.handleClick} className='active'>All Notes</a>
+                        <Link to="/" onClick={this.props.toggleLeftContent} >All Notes</Link>
+
                     </li>
                     <li>
-                        <a>Notebooks</a>
+                        <Link to="/notebooks">Notebooks</Link>
                     </li>
                     <li>
-                        <a>Tags</a>
+                        <Link to="/tags">Tags</Link>
+
                     </li>
                     <li>
-                        <a>Settings</a>
+                        <Link to="/settings">Settings</Link>
                     </li>
                 </ul>
             </div>
@@ -46,3 +43,6 @@ export default class Sidebar extends React.Component {
 
 }
 
+/*
+<a onClick={this.props.toggleLeftContent} className='active'>All Notes - {this.props.leftContent.colapse?'true':'false'}</a>
+*/

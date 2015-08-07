@@ -4,19 +4,24 @@ import { connect } from 'redux/react';
 import Counter from '../components/Counter';
 import * as CounterActions from '../actions/CounterActions';
 
+
 @connect(state => ({
-    counter: state.counter
+    side: state.side
 }))
 
 export default class CounterApp extends Component {
 
 
     render() {
-        const { counter, dispatch } = this.props;
+
+        const { side, dispatch } = this.props;
+
 
         return (
-            <Counter counter={counter}
+            <Counter side={side}
                 {...bindActionCreators(CounterActions, dispatch)} />
         );
     }
 }
+
+

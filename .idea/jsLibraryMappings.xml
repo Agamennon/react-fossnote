@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$/public" libraries="{HTML}" />
+    <file url="file://$PROJECT_DIR$/public/index.html" libraries="{HTML}" />
+    <file url="file://$PROJECT_DIR$/public/layout.html" libraries="{HTML}" />
+    <file url="PROJECT" libraries="{Node.js v0.12.1 Core Modules, react-0.13.1}" />
     <includedPredefinedLibrary name="ECMAScript 6" />
   </component>
 </project>

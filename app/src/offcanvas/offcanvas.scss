@@ -1,116 +1,157 @@
 @import url('http://fonts.googleapis.com/css?family=Montserrat:400,700');
 @import url('http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css');
 
-* {
-    margin: 0;
-    padding: 0;
-}
 
 *, *:before, *:after {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html, body {
-    height: 100%;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
 }
 
 body {
-    font: 12px/1 'Montserrat', sans-serif;
-    color: #333;
-    background: #333;
-    overflow-x: hidden;
+  font: 12px/1 'Montserrat', sans-serif;
+  color: #333;
+  background: #333;
 }
 
-.wrapper {
-    display: flex;
-    min-height: 100%;
+.app {
+  height: 100%;
 }
 
-.sidebar {
-    position: absolute;
-    width: 220px;
-}
+
 
 .content {
-    flex: 1;
-    padding: 30px;
-    background: #eee;
-    box-shadow: 0 0 5px rgba(0,0,0,1);
-    transform: translate3d(0,0,0);
-    transition: transform .3s;
+  display: flex;
+  flex-flow: row;
+  height: 100%;
+  max-width:100%;
+  background: #eee;
+  box-shadow: 0 0 5px rgba(0,0,0,1);
+  transform: translate3d(0,0,0);
+  transition: transform .2s, max-width .2s;
+
 
 }
-
 .content.isOpen {
-    transform: translate3d(220px,0,0);
+  transform: translate3d(220px,0,0);
+  max-width: calc(100% - 220px);
+  width: 100%;
 }
 
-.button {
+
+
+.leftContent {
+  background-color: honeydew;
+  flex-basis: 50%;
+  overflow: auto;
+  transition: flex-basis  200ms;
+
+}
+.collapse {
+  flex-basis: 0;
+//  display:none;
+}
+
+
+.rightContent {
+  background-color: #999999;
+  flex-basis: 100%;
+  overflow: auto;
+}
+
+.topMenu {
+  height: 40px;
+  padding: 10px;
+//  position: fixed;
+  .button {
     cursor: pointer;
+  }
+
+  .button:before {
+    content: '\f0c9';
+    font: 20px fontawesome;
+  }
+
 }
 
-.button:before {
-    content: '\f0c9';
-    font: 42px fontawesome;
-}
+
+
+/*@media (min-width: 600px) {
+
+   .content {
+     max-width: calc(100% - 220px);
+   }
+
+}*/
+
+
 
 /* Demo Navigation */
 
+.sidebar {
+  position: fixed;
+  width: 220px;
+}
+
 .title {
-    font-size: 16px;
-    line-height: 50px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 7px;
-    color: #eee;
-    border-bottom: 1px solid #222;
-    background: #2a2a2a;
+  font-size: 16px;
+  line-height: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  color: #eee;
+  border-bottom: 1px solid #222;
+  background: #2a2a2a;
 }
 
 .nav li a {
-    position: relative;
-    display: block;
-    padding: 15px 15px 15px 50px;
-    font-size: 12px;
-    color: #eee;
-    border-bottom: 1px solid #222;
+  position: relative;
+  display: block;
+  cursor: pointer;
+  padding: 15px 15px 15px 50px;
+  font-size: 12px;
+  color: #eee;
+  border-bottom: 1px solid #222;
 }
 
 .nav li a:before {
-    font: 14px fontawesome;
-    position: absolute;
-    top: 14px;
-    left: 20px;
+  font: 14px fontawesome;
+  position: absolute;
+  top: 14px;
+  left: 20px;
 }
 
 .nav li:nth-child(1) a:before { content: '\f00a'; }
-.nav li:nth-child(2) a:before { content: '\f012'; }
-.nav li:nth-child(3) a:before { content: '\f0e8'; }
-.nav li:nth-child(4) a:before { content: '\f0c3'; }
-.nav li:nth-child(5) a:before { content: '\f022'; }
-.nav li:nth-child(6) a:before { content: '\f115'; }
-.nav li:nth-child(7) a:before { content: '\f085'; }
-.nav li:nth-child(8) a:before { content: '\f023'; left: 23px; }
+.nav li:nth-child(2) a:before { content: '\f02d'; }
+.nav li:nth-child(3) a:before { content: '\f02c'; }
+.nav li:nth-child(4) a:before { content: '\f013'; }
+
 
 .nav li a:hover {
-    background: #444;
+  background: #444;
 }
 
 .nav li a.active {
-    box-shadow: inset 5px 0 0 #5b5, inset 6px 0 0 #222;
-    background: #444;
+  box-shadow: inset 5px 0 0 #5b5, inset 6px 0 0 #222;
+  background: #444;
 }
 
 /* Demo Description */
 
 h1 {
-    margin: 25px 0 15px;
-    font-size: 28px;
-    font-weight: 400;
+  font-size: 28px;
+  font-weight: 400;
 }
 
 h2 {
-    font-size: 18px;
-    font-weight: 400;
-    color: #999;
+  font-size: 18px;
+  font-weight: 400;
+  color: #999;
 }

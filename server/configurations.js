@@ -9,5 +9,19 @@ module.exports = function(app,mode,root){
     app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
     app.use(multer()); // for parsing multipart/form-data
     app.use(express.static(path.resolve(root, 'public')));
+
+    app.post('/items',function(req,res) {
+        setTimeout(function () {
+            res.type('json');
+            res.send({
+                id: parseInt(Math.random() * 1000)
+            });
+        }, 1000);
+    });
+
+
+
+
+
 };
 

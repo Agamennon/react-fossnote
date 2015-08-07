@@ -8,9 +8,19 @@ export default class content extends React.Component {
         super(props);
     }
     render () {
+
+        var sidePanelPosition =  this.props.sidePanelPosition === 'opened';
+       // console.log(this.props.sidePanelPosition);
+        var contentClass = classnames({
+            content:true,
+            isOpen:sidePanelPosition
+        });
+
+        //console.log(this.props.leftContent.colapse);
+
         return (
-            <div className='content isOpen'>
-                <LeftPanel/>
+            <div className={contentClass}>
+                <LeftPanel {...this.props}/>
                 <RightPanel/>
             </div>
         );

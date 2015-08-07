@@ -1,21 +1,45 @@
-import Sidebar from './sidebar/sidebar.jsx';
-import Content from './content/content.jsx';
-import './main.scss';
 
-export class App extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    render () {
+import { createRedux, composeStores } from 'redux';
+import { Provider } from 'redux/react';
+import * as stores from './redux/stores';
+import App from './app.jsx';
+
+import { Router, Route, Link } from 'react-router';
+import { history } from 'react-router/lib/HashHistory';
+
+import { reduxRouteComponent } from 'redux-react-router';
+
+//const store = composeStores(stores);
+
+const redux = createRedux(stores);
+//const redux = createRedux(store);
+
+export default class Main extends React.Component {
+
+    render() {
         return (
-            <div className='app'>
-                <Sidebar/>
-                <Content/>
-            </div>
+            <Provider redux={redux}>
+                {() => <App />}
+            </Provider>
         );
     }
 
 }
 
-React.render(<App/>, document.body);
+React.render(
+
+    <Router history={history}>
+
+        <Route component={Main}>
+            <Route path="/" component={Main}/>
+            <Route path=":id" component={Main}/>
+        </Route>
+
+    </Router>
+    ,
+    document.body
+
+);
+
+
 

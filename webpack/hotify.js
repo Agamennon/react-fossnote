@@ -6,7 +6,7 @@ var cfg =  require('./base.js');
 module.exports = function(dev_port) {
 
 //cfg.devtool = 'cheap-module-eval-source-map';
-    cfg.devtool = 'eval';
+    cfg.devtool = 'cheap-module-eval-source-map';
 
     cfg.entry.app = _.union([
         'webpack-dev-server/client?http://localhost:'+dev_port,

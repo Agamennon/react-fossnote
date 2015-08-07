@@ -20,7 +20,7 @@ export default class content extends React.Component {
 
         return (
             <div className={contentClass}>
-                <LeftPanel {...this.props}/>
+                <LeftPanel {...this.props}>  {this.props.children} </LeftPanel>
                 <RightPanel/>
             </div>
         );

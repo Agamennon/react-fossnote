@@ -1,6 +1,4 @@
 
-
-//@Radium
 export class Notes extends React.Component {
 
     constructor(props) {
@@ -8,7 +6,7 @@ export class Notes extends React.Component {
     }
     render () {
         return (
-            <div style={[this.props.styles]}>
+            <div className='notes'>
                 <ul>
                     <li>Note Snipet</li>
                     <li>Note Snipet</li>
@@ -20,4 +18,3 @@ export class Notes extends React.Component {
     }
 
 }
-//module.hot.accept();

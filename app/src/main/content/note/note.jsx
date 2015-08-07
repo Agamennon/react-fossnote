@@ -1,11 +1,4 @@
 
-var style = {
-    flex:1,
-    width:'100%',
-    height:'100%'
-};
-
-//@Radium
 export class Note extends React.Component {
 
     constructor(props) {
@@ -14,13 +7,13 @@ export class Note extends React.Component {
     }
 
     click(){
-          var x = 10;
+          var x = 20;
           console.log(x);
     }
     render () {
         return (
-            <div style={[this.props.styles]}>
-                 <textarea onClick={this.click.bind(this)} defaultValue='i am a note dudeee!' style={[style]}/>
+            <div className='note'>
+                 <textarea onClick={this.click.bind(this)} defaultValue='i am a note dudeee!'/>
                 <span>fuck</span>
             </div>
         );

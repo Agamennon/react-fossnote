@@ -1,20 +1,31 @@
+
 import './leftPanel.scss';
 
 export default class leftPanel extends React.Component {
+
+    static contextTypes = {
+        router: React.PropTypes.object.isRequired,
+        redux: React.PropTypes.object.isRequired
+    };
+
     constructor(props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this);
-
-    }
-    handleClick (){
 
     }
 
     render () {
+        console.log(this.context.router.state.location);
+      //  console.log(this.context.redux);
+       // console.log(this.props.leftContent.colapse);
+       // console.log(this.props.leftContent.colapse);
+        var leftPanelClass = classnames({
+            leftPanel:true,
+            collapse:this.props.leftContent.colapse
+        });
         return (
-            <div className='leftPanel'>
+            <div className={leftPanelClass}>
                 <div className='topMenu'>
-                    <a onClick={this.handleClick} className='button'></a>
+                    <a onClick={this.props.toggleSidePanel}  className='button'></a>
                     <button>Some Action</button>
                     <button>Some Action</button>
                     <button>Some Action</button>

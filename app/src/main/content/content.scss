@@ -1,0 +1,11 @@
+
+.content {
+  flex:5 1 auto;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  font-size: 1rem;
+  border:1px solid black;
+  @import './notes/notes';
+  @import './note/note';
+}

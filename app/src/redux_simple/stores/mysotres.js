@@ -1,6 +1,6 @@
 
 import { TOGGLE_PANEL } from '../constants/ActionTypes';
-export  function side(state = 'closed', action ) {
+export  function side(state = 'closed', action = {}) {
     switch (action.type) {
         case TOGGLE_PANEL:
             var currentState;

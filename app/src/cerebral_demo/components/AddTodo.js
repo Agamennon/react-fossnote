@@ -25,7 +25,7 @@ class AddTodo extends StateComponent {
         <input
           id="new-todo"
           autoComplete="off"
-          placeholder="What needs to be done?"
+          placeholder="What needs to be?"
           disabled={this.state.isSaving}
           value={this.state.newTodoTitle}
           onChange={this.setNewTodoTitle.bind(this)}

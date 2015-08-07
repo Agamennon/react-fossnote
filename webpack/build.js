@@ -8,7 +8,9 @@ module.exports = function(mode,port,dev_port){
         case 'hot':  webpackFile = './hot.js'; break;
         case 'hotify':  webpackFile = './hotify.js'; break;
         case 'production': webpackFile ='./production.js'; break;
-        case 'test': webpackFile ='./test.js'; break;
+        default: throw new Error('node enviroment = '+ mode +' does not map to a config build, use development, hot, hotify or production');
+      //  case 'production': webpackFile ='./test.js'; break;
+      //  case 'test': webpackFile ='./test.js'; break;
     }
 
     var bundleStart = null;
@@ -21,6 +23,8 @@ module.exports = function(mode,port,dev_port){
         console.log('Bundled em ' + (Date.now() - bundleStart) + 'ms!');
     });
 
+
+
     if (mode !== 'production'){
         var WebpackDevServer = require('webpack-dev-server');
         var bundler = new WebpackDevServer(compiler, {
@@ -29,11 +33,13 @@ module.exports = function(mode,port,dev_port){
             hot: true,
             quiet: false,
             noInfo: true,
+            headers: { 'Access-Control-Allow-Origin': '*' },
+            historyApiFallback: true,
             stats: {
                 progress:true,
                 colors: true
             }
-        });
+        });//                      localhost   coloquei ip para acessar do celular
         bundler.listen(dev_port, 'localhost', function () {
             console.log('Aguarde...');
         });

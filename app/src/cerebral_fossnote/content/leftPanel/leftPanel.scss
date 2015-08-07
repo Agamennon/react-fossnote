@@ -1,9 +1,12 @@
 
 
 .leftPanel {
-  background-color: honeydew;
+  //background-color: honeydew;
+ // background-color: white;
   flex-basis: 50%;
-  overflow: auto;
+ overflow: hidden;
+
+
   transition: flex-basis  200ms;
 
 }
@@ -13,10 +16,46 @@
 }
 
 
+
+
+
+.note {
+  background: #fff;
+  margin: 4px;
+ // margin-top: 3px;
+ // margin-bottom: 3px;
+  border-radius: 2px 2px 2px 2px;
+  //box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+  border-bottom: 0 none;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+
+  height: 90px;
+  padding: 5px;
+
+
+}
+
+.note:hover{
+      border-radius: 2px 2px 2px 2px;
+    //  border-bottom: 2px;
+      border: 1px solid black;
+      box-shadow: 0 5px 2px #777;
+
+}
+
+.notes {
+   overflow-y: auto;
+}
+
 .topMenu {
   height: 40px;
   padding: 10px;
  // position: fixed;
+
+
+  border-radius: 0 2px 0 2px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+
   .button {
     cursor: pointer;
   }
@@ -27,3 +66,26 @@
   }
 
 }
+
+
+
+
+
+
+/*
+
+background: #fff;
+float: left;
+margin: 25px 0 0 25px;
+display: block;
+text-align: center;
+width: 100px;
+padding:20px;
+border-radius: 2px 2px 2px 2px;
+user-select: none;
+
+}
+
+
+border-bottom: 0 none;
+box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);*/

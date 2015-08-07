@@ -2,13 +2,17 @@
 import './leftPanel.scss';
 
 export default class leftPanel extends React.Component {
+
+
+
+
     constructor(props) {
         super(props);
 
     }
 
     render () {
-       // console.log(this.props.leftContent.colapse);
+        console.log(this.context);
         var leftPanelClass = classnames({
             leftPanel:true,
             collapse:this.props.leftContent.colapse
@@ -24,6 +28,7 @@ export default class leftPanel extends React.Component {
 
                 <h1>Left Flex Screen</h1>
                 <h2>Where my notes or tags are</h2>
+
 
             </div>
         );

@@ -39,7 +39,6 @@ module.exports = {
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
-        new ExtractTextPlugin('styles.css'),
         new webpack.ProvidePlugin({  //qualquer hora que usar React ele preenche com require ('react/addons');
             "React": "react/addons",   //http://stackoverflow.com/questions/23305599/webpack-provideplugin-vs-externals
             "Router": "react-router",

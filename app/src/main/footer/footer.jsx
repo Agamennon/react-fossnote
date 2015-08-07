@@ -1,8 +1,5 @@
-var style = {
-    backgroundColor:'red'
-};
+require('./footer.scss');
 
-//@Radium
 export class Footer extends React.Component {
 
     constructor(props) {
@@ -10,11 +7,11 @@ export class Footer extends React.Component {
     }
     render () {
         return (
-            <footer style={[this.props.styles]}>
-                <span style={[style]}>i am a footeeeeer</span>
+            <footer>
+                <span>i am a footer</span>
             </footer>
         );
     }
 
 }
-//module.hot.accept();
+

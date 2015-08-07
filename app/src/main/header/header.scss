@@ -1,0 +1,18 @@
+
+
+
+header {
+  font-size: 1rem;
+  flex:0 0 4em;
+  display:flex;
+  flex-direction:row;
+  //max-height: 5em;
+ // min-height: 4em;
+  border:1px solid black;
+
+  .header-item{
+    flex:1;
+    border:1px solid black;
+  }
+
+}
