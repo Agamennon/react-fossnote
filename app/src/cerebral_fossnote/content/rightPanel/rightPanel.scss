@@ -2,5 +2,21 @@
 .rightPanel {
   background-color: #999999;
   flex-basis: 100%;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  //transition: flex-basis  200ms;
+  @import './noteEdit/noteEdit.scss';
 }
+
+.rightPanel.mobile {
+  flex-basis: 0;
+}
+
+/*
+
+@media only screen and (min-width: 700px) {
+  .rightPanel {
+    flex-basis: 0;
+  }
+}
+*/

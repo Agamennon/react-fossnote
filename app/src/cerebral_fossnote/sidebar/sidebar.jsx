@@ -4,7 +4,8 @@ import {Decorator as Cerebral} from 'cerebral-react-immutable-store';
 
 @Cerebral({
     test:['test'],
-    router:['router']
+    router:['router'],
+    mode:['mode']
 })
 class Sidebar extends React.Component {
     constructor(props) {
@@ -26,6 +27,7 @@ class Sidebar extends React.Component {
             collapse:this.state.collapse
         });
 
+
      //   const allClass = classnames({'active': (this.props.router.path === '/all')});
 
         return (
@@ -35,16 +37,16 @@ class Sidebar extends React.Component {
                 </div>
                 <ul className='nav'>
                     <li>
-                        <a  className={classnames({'active': (this.props.router.path === '/all')})} href="#/all">All notes</a>
+                        <a onClick={()=>{this.props.signals.sideBarItemClick()}} className={classnames({'active': (this.props.router.path === '/all')})} href="#/all">All notes</a>
                     </li>
                     <li>
-                        <a className={classnames({'active': (this.props.router.path === '/notebooks')})} href="#/notebooks">Notebooks</a>
+                        <a onClick={()=>{this.props.signals.sideBarItemClick()}} className={classnames({'active': (this.props.router.path === '/notebooks')})} href="#/notebooks">Notebooks</a>
                     </li>
                     <li>
-                        <a className={classnames({'active': (this.props.router.path === '/tags')})} href="#/tags">Tags</a>
+                        <a onClick={()=>{this.props.signals.sideBarItemClick()}} className={classnames({'active': (this.props.router.path === '/tags')})} href="#/tags">Tags</a>
                     </li>
                     <li>
-                        <a className={classnames({'active': (this.props.router.path === '/settings')})} href="#/settings">Settings</a>
+                        <a onClick={()=>{this.props.signals.sideBarItemClick()}} className={classnames({'active': (this.props.router.path === '/settings')})} href="#/settings">Settings</a>
                     </li>
                 </ul>
             </div>

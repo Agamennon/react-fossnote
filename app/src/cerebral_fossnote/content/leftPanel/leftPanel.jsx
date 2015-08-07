@@ -1,6 +1,46 @@
 import './leftPanel.scss';
 import {Decorator as Cerebral} from 'cerebral-react-immutable-store';
 
+import Notes from './notes/notes.jsx';
+
+
+@Cerebral({
+    router:['router'],
+    mode:['mode']
+})
+class leftPanel extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render () {
+
+    //    console.log(this.props.mode);
+        var leftPanel = classnames({
+            leftPanel:true,
+            mobile:this.props.mode === 'mobile'
+        });
+
+
+        let elm = this.props.router.path === '/all'?(<div><span>all</span></div>):(<div><span>tags</span></div>);
+
+        return (
+            <div className={leftPanel}>
+                <Notes/>
+            </div>
+        );
+    }
+
+}
+
+export default leftPanel
+
+
+
+/*
+
+import './leftpanel.bkp.scss';
+import {Decorator as Cerebral} from 'cerebral-react-immutable-store';
+
 @Cerebral({
     router:['router'],
     notes:['notes']
@@ -17,7 +57,7 @@ class leftPanel extends React.Component {
 
     }
     noteClick (id){
-     //   console.log (id);
+        //   console.log (id);
         this.props.signals.noteSelected({id:id});
     }
 
@@ -31,7 +71,7 @@ class leftPanel extends React.Component {
                     <h3><span>{obj.title}</span></h3>
                     <hr/>
                     <span>{obj.text}</span>
-                <br/>
+                    <br/>
                 </div>
             )
         });
@@ -51,13 +91,15 @@ class leftPanel extends React.Component {
 
                     <button>Some Action</button>
                 </div>
+
                 <div className='notes'>
-                {theNotes}
+                    {theNotes}
                 </div>
+
             </div>
         );
     }
 
 }
 
-export default leftPanel
+export default leftPanel*/

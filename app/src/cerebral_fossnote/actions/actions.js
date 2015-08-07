@@ -21,6 +21,11 @@ export default {
     },
 
 
+   setAppMode(args,state){
+
+    state.set('mode',args.mode);
+   },
+
     selectNote(args,state){
         //  const name = state.get('inputValue');
         const id = args.id;
@@ -28,6 +33,16 @@ export default {
         state.set(['selectedNote'],note);
 
 
+    },
+
+    toggleSideBar(args,state){
+       state.set('sideBarOpen',!state.get('sideBarOpen'));
+        console.log('toggoling side bar');
+    },
+
+
+    closeSideBar(args,state){
+        state.set('sideBarOpen',false);
     },
 
 
