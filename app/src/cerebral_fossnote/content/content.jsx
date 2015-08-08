@@ -18,11 +18,12 @@ import RightPanel from  './rightPanel/rightPanel.jsx';
             content:true,
             isOpen:this.props.mode === 'desktop' || this.props.sideBarOpen
         });
+        let rightPanel = this.props.mode === 'desktop'? <RightPanel/> : null;
 
         return (
             <div className={content}>
                 <LeftPanel/>
-                <RightPanel/>
+                {rightPanel}
             </div>
         );
     }

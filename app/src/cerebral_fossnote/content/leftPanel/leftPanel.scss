@@ -5,11 +5,14 @@
  //background-color: honeydew;
  // background-color: white;
  flex-basis: 50%;
+// max-width: 800px;
  overflow: hidden;
  // min-height: 100%;
- min-width: 300px;
-// transition: flex-basis  0ms;
-
+// min-width: 100%;
+ //min-width: 300px;
+ background: #eee;
+ transition: flex-basis  400ms;
+ //transform: translateZ(0);
  display: flex;
  flex-flow: column;
 
@@ -17,8 +20,14 @@
 
 }
 
+@media (max-width: 700px) { /* min-width / % = (300 / 0.4) = 750 */
+ min-width: 100%;
+}
+
+
 .leftPanel.mobile {
  flex-basis: 100%;
+ transition: flex-basis  400ms;
 }
 
 .collapse {
