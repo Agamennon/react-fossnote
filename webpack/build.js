@@ -29,7 +29,7 @@ module.exports = function(mode,port,dev_port){
         var WebpackDevServer = require('webpack-dev-server');
         var bundler = new WebpackDevServer(compiler, {
             publicPath: '/build/',
-            proxy: { "*": 'http://192.168.25.10:'+port},
+            proxy: { "*": 'http://localhost:'+port},
             hot: true,
             quiet: false,
             noInfo: true,
@@ -40,7 +40,8 @@ module.exports = function(mode,port,dev_port){
                 colors: true
             }
         });//                      localhost   coloquei ip para acessar do celular
-        bundler.listen(dev_port, '192.168.25.10', function () {
+        bundler.listen(dev_port, 'localhost', function () {
+     //   bundler.listen(dev_port, '192.168.25.10', function () {
             console.log('Aguarde...');
         });
     }else {

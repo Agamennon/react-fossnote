@@ -9,30 +9,19 @@
  overflow: hidden;
  // min-height: 100%;
 // min-width: 100%;
- //min-width: 300px;
+ min-width: 300px;
  background: #eee;
- transition: flex-basis  400ms;
+// transition: flex-basis  400ms;
  //transform: translateZ(0);
  display: flex;
  flex-flow: column;
 
+ &.mobile{
+  flex-basis: 100%;
+ }
+
  @import './notes/notes.scss';
 
-}
-
-@media (max-width: 700px) { /* min-width / % = (300 / 0.4) = 750 */
- min-width: 100%;
-}
-
-
-.leftPanel.mobile {
- flex-basis: 100%;
- transition: flex-basis  400ms;
-}
-
-.collapse {
-  flex-basis: 0;
-  //  display:none;
 }
 
 

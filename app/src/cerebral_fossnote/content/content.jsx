@@ -16,6 +16,7 @@ import RightPanel from  './rightPanel/rightPanel.jsx';
 
         var content = classnames({
             content:true,
+            mobile: this.props.mode === 'mobile',
             isOpen:this.props.mode === 'desktop' || this.props.sideBarOpen
         });
         let rightPanel = this.props.mode === 'desktop'? <RightPanel/> : null;
