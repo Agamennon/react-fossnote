@@ -9,13 +9,19 @@ class topMenu extends React.Component {
 
     constructor(props) {
         super(props);
+        this.test = this.test.bind(this);
+    }
+
+
+    test(){
+       this.props.signals.showNoteToggled();
     }
 
     render () {
 
         return (
             <div className='topMenu'>
-                <button>Some Action</button>
+                <button onClick={this.test}>Some Action</button>
             </div>
         );
     }

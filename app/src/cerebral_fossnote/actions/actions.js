@@ -26,10 +26,18 @@ export default {
     state.set('mode',args.mode);
    },
 
+
+    toggleShowNote (args,state){
+        const show =  state.get('showNote') || false;
+        state.set('showNote',!show);
+    },
+
+
     selectNote(args,state){
         //  const name = state.get('inputValue');
         const id = args.id;
         const note = state.get(['notes',id]);
+
         state.set(['selectedNote'],note);
 
 

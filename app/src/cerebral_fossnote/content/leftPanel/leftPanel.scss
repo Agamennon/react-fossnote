@@ -17,8 +17,25 @@
  flex-flow: column;
 
  &.mobile{
-  flex-basis: 100%;
+  min-width: 0;
+  //flex-basis: 100%;
  }
+
+ &.mobile.showNote{
+ // visibility: hidden;
+
+ // display:none;
+
+ // visibility: hidden;  //http://stackoverflow.com/questions/3331353/transitions-on-the-display-property
+
+//  flex-basis: 0;
+//  min-width: 0;
+
+
+//  display: none;
+ // flex-basis: 100%;
+ }
+
 
  @import './notes/notes.scss';
 

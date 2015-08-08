@@ -8,12 +8,12 @@
   max-width:100%;
   background: #eee;
   box-shadow: 0 0 5px rgba(0,0,0,1);
-  perspective: 1000px;
- // transform: translate3d(0,0,0);
-//  transform: translateZ(0);
+ // perspective: 1000px;
+ // transform: translate3d(-50%,0,0);
+  transform: translateZ(0);
   transition: transform .3s;
   &.mobile {
-    min-width: 100%;
+    min-width: 200%;
   }
 
   &.isOpen {

@@ -6,7 +6,8 @@ import Notes from './notes/notes.jsx';
 
 @Cerebral({
     router:['router'],
-    mode:['mode']
+    mode:['mode'],
+    showNote:['showNote']
 })
 class leftPanel extends React.Component {
     constructor(props) {
@@ -17,7 +18,8 @@ class leftPanel extends React.Component {
     //    console.log(this.props.mode);
         var leftPanel = classnames({
             leftPanel:true,
-            mobile:this.props.mode === 'mobile'
+            mobile:this.props.mode === 'mobile',
+            showNote:this.props.showNote
         });
 
 

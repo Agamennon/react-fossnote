@@ -4,7 +4,8 @@ import NoteEdit from './noteEdit/noteEdit.jsx';
 
 
 @Cerebral({
-    mode:['mode']
+    mode:['mode'],
+    showNote:['showNote']
 })
 class rightPanel extends React.Component {
 
@@ -19,7 +20,8 @@ class rightPanel extends React.Component {
 
         var rightPanel = classnames({
             rightPanel:true,
-            mobile:this.props.mode === 'mobile'
+            mobile:this.props.mode === 'mobile',
+            showNote:this.props.showNote
         });
 
         return (

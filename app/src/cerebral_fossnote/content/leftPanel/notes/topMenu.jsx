@@ -10,6 +10,11 @@ class topMenu extends React.Component {
     constructor(props) {
         super(props);
         this.hamburgerClick = this.hamburgerClick.bind(this);
+        this.test = this.test.bind(this);
+    }
+
+    test(){
+
     }
 
     hamburgerClick (){
@@ -24,7 +29,7 @@ class topMenu extends React.Component {
                 {hamburger}
 
                 <button style={{marginLeft:'20px'}} onClick={()=>{this.props.signals.noteAdded({ title: 'this is a supernote',text:'i just added this shit'})}}>Some Action</button>
-                <button onClick={()=>{console.log(this.props.notes)}}>Some Action</button>
+                <button onClick={this.test}>Some Action</button>
 
             </div>
         )

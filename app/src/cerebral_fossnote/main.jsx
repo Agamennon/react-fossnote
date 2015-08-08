@@ -12,7 +12,8 @@ import Media from './gui-media.js';
 import {Decorator as Cerebral} from 'cerebral-react-immutable-store';
 
 controller.signal ('noteAdded',actions.addNote);
-controller.signal ('noteSelected',actions.selectNote);
+controller.signal ('noteSelected',actions.selectNote, actions.toggleShowNote);
+controller.signal ('showNoteToggled',actions.toggleShowNote);
 controller.signal ('hamburgerClicked',actions.toggleSideBar);
 controller.signal ('sideBarItemClick',actions.toggleSideBar);
 controller.signal ('notesClicked',actions.closeSideBar);

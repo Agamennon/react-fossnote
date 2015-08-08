@@ -24,7 +24,7 @@ import RightPanel from  './rightPanel/rightPanel.jsx';
         return (
             <div className={content}>
                 <LeftPanel/>
-                {rightPanel}
+                <RightPanel/>
             </div>
         );
     }

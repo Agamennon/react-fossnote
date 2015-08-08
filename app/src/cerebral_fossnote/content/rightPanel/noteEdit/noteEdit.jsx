@@ -17,9 +17,11 @@ class noteEdit extends React.Component {
 
             <div>
                 <TopMenu/>
+                <div  onDoubleClick={()=>{alert('you have double clicked')}}>
                 <h1>Right Flex Screessssn</h1>
                 <h2>Where my note is shown</h2>
                 <div >{note.text}</div>
+                </div>
             </div>
         );
     }
